@@ -1,4 +1,4 @@
-# CHANGELOG — eInvoice Viewer ( App )
+# CHANGELOG — eInvoice Viewer for PEPPOL & EN16931 ( App )
 
 Die Fassungsnummer dieses App-Pakets steht **nur hier**. `build-package.mjs` liest sie von hier,
 `check-app-package.php` prüft sie, und der ZIP-Name entsteht daraus.
@@ -7,11 +7,35 @@ Die Fassungsnummer dieses App-Pakets steht **nur hier**. `build-package.mjs` lie
 Dateinamen zu wiederholen heisst, sie beim nächsten Mal an einer davon zu vergessen — und gemerkt
 wird es beim Kunden.
 
-⚠️ **Das ist nicht die Fassung des Plugins.** `einvoice-viewer-for-peppol-en16931` steht bei 2.17.x
-und zählt seine eigene Reihe; dieses Paket ist eine andere Auslieferungsform desselben Werkzeugs und
-beginnt bei 1.0.0.
+⚠️ **Seit 2.36.0 dieselbe Fassung wie das Plugin.** App und Plugin sind ein Produkt in zwei Hüllen und zählen
+gemeinsam. Bis 1.11.0 zählte die App eine eigene Reihe.
 
 ---
+
+## 2.37.0 — 2026-10-19
+
+- Die Gestaltung lässt sich in `config.js` mit `designKit` umstellen: Kit H, Kit A, Kit S oder ein eigenes Kit im Ordner `kits/`. Knöpfe, Sprachumschalter, Meldungen und der Einstellungsdialog folgen ihr.
+- Unten auf der Seite steht ein Link auf das Handbuch, das im Ordner `manual` beiliegt.
+- Der Hinweis auf den Zusatz Extended Profiles verweist auf dessen Seite auf invoicePress.de.
+- Gescannte PDF-Anlagen ( schwarz-weisse Scans, wie viele Scanner und Faxprogramme sie erzeugen ) erscheinen in der Vorschau mit Inhalt statt als leere Seiten, wenn die App über eine Webadresse geöffnet ist. Per Doppelklick aus dem Ordner geöffnet bleiben solche Seiten leer, weil der Browser dort die nötige Zusatzdatei nicht lädt.
+- Die Karten eines Abschnitts stehen in zwei Spalten und in einem schmalen Fenster untereinander.
+- Die Vorschau einer Anlage nutzt die volle Breite der Seite.
+- Der Knopf „Einstellungen“ hat dieselbe Grösse wie „Zurücksetzen“.
+
+## 2.36.0 — 2026-10-18
+
+- Die App trägt jetzt dieselbe Fassungsnummer wie das WordPress-Plugin; sie springt deshalb von 1.11.0 auf 2.36.0.
+- Die App heisst wie das Plugin „eInvoice Viewer for PEPPOL & EN16931“. Die Startdatei heisst jetzt `einvoice-viewer-for-peppol-en16931.html`; `index.html` führt weiterhin dorthin.
+- Die Zeile über der Rechnung nennt die Fassung des Formats, wenn die Rechnung sie angibt, zum Beispiel „XRechnung-CII 3.0“.
+- Die Einbindung in eine bestehende Seite braucht drei Zeilen: die Schriften, das Skript und das Element mit `data-base`, der Adresse dieses Ordners. `examples/embed.html` zeigt sie, `examples/embed-iframe.html` die Einbindung als Rahmen.
+- Neuer Knopf „Einstellungen“ über der Ablagefläche, sobald ein Zusatz mit Einstellungen im Ordner liegt. Die Einstellungen bleiben im Browser; eine Sicherungsdatei speichert und lädt sie.
+- Zusätze werden nach der Liste `addons/index.json.js` geladen. Extended Profiles wird wie bisher in den Ordner entpackt.
+
+## 1.11.0 — 2026-10-13
+
+- Die Prüfziffer einer IBAN prüft nicht mehr der Viewer, sondern der Zusatz Identifier Check, zusammen mit
+  den übrigen Kennungen. Der Hinweiskasten nennt deshalb nur noch die Pflichtfelder, die Regeln der
+  Umsatzsteuer-Kategorien, die Reihenfolge der Daten und ob die Summen aufgehen.
 
 ## 1.10.0 — 2026-10-11
 
